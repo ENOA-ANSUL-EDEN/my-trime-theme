@@ -1,0 +1,32 @@
+name: hanamaru30
+
+style:
+  __include: hanamaru.trime:/style
+
+preset_keys:
+  __include: hanamaru.trime:/preset_keys
+
+liquid_keyboard:
+  __include: hanamaru.trime:/liquid_keyboard
+
+fallback_colors:
+  __include: hanamaru.trime:/fallback_colors
+
+preset_keyboards:
+  __include: hanamaru.trime:/preset_keyboards
+
+  default:
+    __include: hanamaru.trime:/preset_keyboards/default
+    __patch:
+      keys/@10/width: 0
+      keys/@after 19: {click: ";"}
+      keys/@20/width: 0
+      keys/@30: {width: 15, composing: "'", __include: "hanamaru.trime:/preset_keyboards/default/keys/@31"}
+      keys/@31: {click: "/"}
+      keys/@32/composing: ""
+      keys/@34/composing: ""
+      keys/@35/composing: "'"
+      keys/@36/composing: "/"
+
+preset_color_schemes:
+  __include: hanamaru.trime:/preset_color_schemes

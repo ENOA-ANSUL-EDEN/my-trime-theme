@@ -1,0 +1,34 @@
+name: hanamaru30AL
+
+style:
+  __include: hanamaru30.trime:/style
+
+preset_keys:
+  __include: hanamaru30.trime:/preset_keys
+
+liquid_keyboard:
+  __include: hanamaru30.trime:/liquid_keyboard
+
+fallback_colors:
+  __include: hanamaru30.trime:/fallback_colors
+
+preset_keyboards:
+  __include: hanamaru30.trime:/preset_keyboards
+
+  default:
+    __include: hanamaru30.trime:/preset_keyboards/default
+    __patch:
+      keys/@10/width: 2.5
+      keys/@11/width: 9.5
+      keys/@12/width: 9.5
+      keys/@13/width: 9.5
+      keys/@14/width: 9.5
+      keys/@15/width: 9.5
+      keys/@16/width: 9.5
+      keys/@17/width: 9.5
+      keys/@18/width: 9.5
+      keys/@19/width: 9.5
+      keys/@21/width: 2.5
+
+preset_color_schemes:
+  __include: hanamaru30.trime:/preset_color_schemes
