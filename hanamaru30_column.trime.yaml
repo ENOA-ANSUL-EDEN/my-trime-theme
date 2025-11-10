@@ -1,7 +1,10 @@
-name: hanamaru30R
+name: hanamaru30_column
 
 style:
   __include: hanamaru.trime:/style
+  keyboard_height: 280
+  horizontal_gap: 8
+  vertical_gap: 4
 
 preset_keys:
   __include: hanamaru.trime:/preset_keys
@@ -11,6 +14,12 @@ liquid_keyboard:
 
 fallback_colors:
   __include: hanamaru.trime:/fallback_colors
+
+preset_color_schemes:
+  __include: hanamaru.trime:/preset_color_schemes
+
+tool_bar:
+  __include: hanamaru.trime:/tool_bar
 
 preset_keyboards:
   __include: hanamaru.trime:/preset_keyboards
@@ -36,11 +45,10 @@ preset_keyboards:
       keys/@before 34: {click: ","}
       keys/@before 35: {click: "."}
       keys/@before 36: {click: "/"}
-      keys/@30: {width: 15, composing: "'", __include: "hanamaru.trime:/preset_keyboards/default/keys/@31"}
-      keys/@31: {__include: "hanamaru.trime:/preset_keyboards/default/keys/@21"}
-      keys/@32: {click: "'"}
+      keys/@30/composing: "'"
+      keys/@before 39: {__include: "hanamaru.trime:/preset_keyboards/default/keys/@21"}
+      keys/@32/composing: "/"
+      keys/@31: {}
       keys/@34: {}
       keys/@35: {__include: "hanamaru.trime:/preset_keyboards/default/keys/@29"}
-
-preset_color_schemes:
-  __include: hanamaru.trime:/preset_color_schemes
+      keys/@36/composing: "'"

@@ -12,6 +12,12 @@ liquid_keyboard:
 fallback_colors:
   __include: hanamaru.trime:/fallback_colors
 
+preset_color_schemes:
+  __include: hanamaru.trime:/preset_color_schemes
+
+tool_bar:
+  __include: hanamaru.trime:/tool_bar
+
 preset_keyboards:
   __include: hanamaru.trime:/preset_keyboards
 
@@ -21,6 +27,3 @@ preset_keyboards:
       keys/@10/width: 0
       keys/@after 19: {click: ";"}
       keys/@20/width: 0
-
-preset_color_schemes:
-  __include: hanamaru.trime:/preset_color_schemes

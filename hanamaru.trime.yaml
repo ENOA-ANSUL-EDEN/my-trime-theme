@@ -11,7 +11,7 @@ style:
   proximity_correction: true
   reset_ascii_mode: true
   candidate_use_cursor: true
-  comment_on_top: true
+  comment_on_top: false
   horizontal: false
   # 字体
   candidate_font: han.ttf
@@ -25,31 +25,31 @@ style:
   text_font: latin.ttf
   # 尺寸
   candidate_padding: 16
-  candidate_spacing: 0.5
+  candidate_spacing: 1
   candidate_text_size: 16
   candidate_view_height: 28
   comment_height: 14
   comment_text_size: 12
-  key_height: 42
+  key_height: 45 # 42
   key_long_text_size: 16
   key_text_size: 20
   key_width: 10.0
-  keyboard_height: 270
+  keyboard_height: 275 # 270
   keyboard_height_land: 200
-  horizontal_gap: 10
-  vertical_gap: 8
   label_text_size: 16
   preview_height: 56
   preview_offset: -32
-  preview_text_size: 40
+  preview_text_size: 24
   symbol_text_size: 10
   text_size: 14
-  vertical_correction: -5
+  vertical_correction: 0
   # 边距
   keyboard_padding: 3
   keyboard_padding_bottom: 0
+  horizontal_gap: 12
+  vertical_gap: 8
   # 圆角
-  round_corner: 6
+  round_corner: 4
   shadow_radius: 0.0
   # Enter 键标签
   enter_label_mode: 0
@@ -62,13 +62,13 @@ style:
     send: 发送
     default: Enter
   # 字符偏移
-  key_symbol_offset_y: 2
-  key_hint_offset_y: -2
+  key_symbol_offset_y: 1
+  key_hint_offset_y: -1
 
 preedit:
   horizontal_padding: 8
   alpha: 0.8
-  top_end_radius: 4
+  top_end_radius: 0
   foreground:
     font_size: 16
 
@@ -148,10 +148,10 @@ preset_color_schemes:
     hilited_candidate_back_color: 0x314259
 
   default:
-  # material_light:
+    # material_light:
     name: "Material Design Light"
     author: "Enoa"
-    dark_scheme: material_dark
+    dark_scheme: fcitx5_mone_dark
     border_color: 0xfff5f0f4
     text_color: 0xff2e2e2e
     text_back_color: 0xffffffff
@@ -171,6 +171,7 @@ preset_color_schemes:
     hilited_on_key_back_color: 0xff6750a4
     on_key_text_color: 0xffffffff
     hilited_on_key_text_color: 0xffffffff
+    candidate_separator_color: 0xffe4d9e0
 
   material_dark:
     name: "Material Design Dark"
@@ -200,6 +201,37 @@ preset_color_schemes:
     benter: 0xB0C6FF
     tenter: 0xff000000
 
+  fcitx5_mone_dark:
+    name: "Fcitx5 Monet Dark"
+    author: "Enoa"
+
+    border_color: 0x1C1F29
+    text_color: 0xB3C5FF
+    text_back_color: 0x1C1F29
+    hilited_text_color: 0xE0E2EF
+    hilited_back_color: 0x00
+    comment_text_color: 0xC3C6D6
+    candidate_text_color: 0xE0E2EF
+    hilited_candidate_text_color: 0xE0E2EF
+    hilited_candidate_back_color: 0x00
+    hilited_comment_text_color: 0xC3C6D6
+    key_text_color: 0xE0E2EF
+    key_back_color: 0x363943
+    hilited_key_text_color: 0x002B75
+    hilited_key_back_color: 0xB3C5FF
+    keyboard_back_color: 0x1C1F29
+    off_key_back_color: 0x444465
+    hilited_off_key_back_color: 0xB3C5FF
+    off_key_text_color: 0xE0E2EF
+    hilited_off_key_text_color: 0x002B75
+    on_key_back_color: 0xB3C5FF
+    hilited_on_key_back_color: 0xB3C5FF
+    on_key_text_color: 0x002B75
+    hilited_on_key_text_color: 0x002B75
+    benter: 0xB3C5FF
+    tenter: 0x002B75
+    candidate_separator_color: 0xff363943
+
 liquid_keyboard:
   author: "tumuyan"
   row: 6
@@ -218,7 +250,7 @@ liquid_keyboard:
       - Return2
       - liquid_keyboard_clipboard
       - liquid_keyboard_tabs
-  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, symbollist, list, ids, symbol, tabs, pinyin, script_symbols, jp, grease, rusa, korea, lation, yinbiao, unit, yanwenzi, combing, emoji_full, candidate]  #tab列表
+  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, symbollist, list, ids, symbol, tabs, pinyin, script_symbols, jp, grease, rusa, korea, lation, yinbiao, unit, yanwenzi, combing, emoji_full, candidate] #tab列表
   tabs:
     name: 更多
     type: TABS
@@ -247,7 +279,7 @@ liquid_keyboard:
   math:
     type: SINGLE
     name: 数学
-    keys: "≈＝≠≌<>≤≥≡()[]{}-+±×*/÷&∥%‰‱°′″∫∮∯∬∭∰∞∑∧∏∈∵∴⊥∝∨∪•√〒∝∽∈∩∧⊙⌒∥∟∣∂∆∞≌∉∪∨⊕⊿⊥∠∫∬∭"  #tab中的按键列表
+    keys: "≈＝≠≌<>≤≥≡()[]{}-+±×*/÷&∥%‰‱°′″∫∮∯∬∭∰∞∑∧∏∈∵∴⊥∝∨∪•√〒∝∽∈∩∧⊙⌒∥∟∣∂∆∞≌∉∪∨⊕⊿⊥∠∫∬∭" #tab中的按键列表
   cn:
     type: SINGLE
     name: 中文
@@ -263,9 +295,9 @@ liquid_keyboard:
       - ‘
       - ···
       - ……
-      - { click: "-" }
-      - { click: "——", label: "破折" }
-      - { click: "" } # 内容为空可以强制令键盘从此处新起一行 (NOTE: 某次重构后失效)
+      - {click: "-"}
+      - {click: "——", label: "破折"}
+      - {click: ""} # 内容为空可以强制令键盘从此处新起一行 (NOTE: 某次重构后失效)
       - （
       - ）
       - 【
@@ -328,7 +360,7 @@ liquid_keyboard:
   combing:
     type: SINGLE
     name: "组合"
-    keys: ["⃢", "꯭", "̣", "̲"  ]
+    keys: ["⃢", "꯭", "̣", "̲"]
   ascii:
     type: SINGLE
     name: 英文
@@ -344,7 +376,62 @@ liquid_keyboard:
   symbollist:
     type: SYMBOL
     name: 符号表
-    keys: [ 符号: '/fh', 电脑: '/dn', 象棋: '/xq', 麻将: '/mj', 骰子: '/sz', 扑克: '/pk', 天气: '/tq', 音乐: '/yy', 八卦: '/bg', 易经: '/lssg', 天体: '/tt',  星座: '/xz',  星号: '/xh',  方块: '/fk',  几何: '/jh',  箭头: '/jt',  数学: '/sx',  上标: '/sb',  下标: '/xb',  单位: '/dw',  货币: '/hb',  拼音: '/py',  注音: '/zy',  假名: '/jm',  片假: '/pjm',  韩文: '/hw',  希腊: '/xl',  希大: '/xld', 罗马:   '/lm',  罗大:   '/lmd', 俄语:   '/ey',  俄大:   '/eyd', 表情:  '/bq',  一: '/1',  二: '/2',  三: '/3',  四: '/4',  五: '/5',  六: '/6',  七: '/7',  八: '/8',  九: '/9',  零: '/0',  十: '/10',  分数: '/fs',  标点: '/bd',  偏旁: '/pp',  竖标:  '/bdz'  ]
+    keys: [{符号: '/fh'}, {电脑: '/dn'}, {象棋: '/xq'}, {麻将: '/mj'}, {骰子: '/sz'}, {扑克: '/pk'}, {天气: '/tq'}, {音乐: '/yy'}, {八卦: '/bg'}, {易经: '/lssg'}, {天体: '/tt'}, {星座: '/xz'}, {星号: '/xh'}, {方块: '/fk'}, {几何: '/jh'}, {箭头: '/jt'}, {数学: '/sx'}, {上标: '/sb'}, {下标: '/xb'}, {单位: '/dw'}, {货币: '/hb'}, {拼音: '/py'}, {注音: '/zy'}, {假名: '/jm'}, {片假: '/pjm'}, {韩文: '/hw'}, {希腊: '/xl'}, {希大: '/xld'}, {罗马: '/lm'}, {罗大: '/lmd'}, {俄语: '/ey'}, {俄大: '/eyd'}, {表情: '/bq'}, {一: '/1'}, {二: '/2'}, {三: '/3'}, {四: '/4'}, {五: '/5'}, {六: '/6'}, {七: '/7'}, {八: '/8'}, {九: '/9'}, {零: '/0'}, {十: '/10'}, {分数: '/fs'}, {标点: '/bd'}, {偏旁: '/pp'}, {竖标: '/bdz'}]
+
+
+tool_bar:
+  button_spacing: 13
+  button_font: iconfont.ttf
+
+  primary_button:
+    foreground:
+      style: "hanamaru/yuki.png"
+      padding: 8
+    action: menu_keyboard
+
+  hide_button: &hide_button
+    foreground:
+      style: "ic@keyboard_close"
+    action: Hide
+
+  emoji_button: &emoji_button
+    foreground:
+      style: "ic@emoticon_cry_outline"
+    action: liquid_keyboard_emoji
+
+  clipboard_button: &clipboard_button
+    foreground:
+      style: "ic@clipboard_text_outline"
+    action: liquid_keyboard_clipboard
+
+  edit_button: &edit_button
+    foreground:
+      style: "ic@cursor_move"
+    action: Keyboard_edit
+
+  redo_button: &redo_button
+    foreground:
+      style: "ic@redo"
+    action: redo
+
+  undo_button: &undo_button
+    foreground:
+      style: "ic@undo"
+    action: undo
+
+  right_button: &right_button
+    foreground:
+      style: "ic@arrow-right"
+      padding: 14
+    action: Right
+
+  left_button: &left_button
+    foreground:
+      style: "ic@arrow-left"
+      padding: 14
+    action: Left
+
+  buttons: [*emoji_button, *edit_button, *clipboard_button, *redo_button, *undo_button, *right_button, *left_button]
 
 preset_keyboards:
   default:
@@ -354,8 +441,9 @@ preset_keyboards:
     ascii_mode: 0
     lock: true
     label_transform: uppercase
+    key_symbol_offset_x: 14
     keys:
-      - {click: q, hint: "Home", long_click: "`", swipe_up: "q_sym", swipe_down: Home}
+      - {click: q, long_click: "`", swipe_up: "q_sym", swipe_down: Home}
       - {click: w, long_click: "{", swipe_up: "w_sym"}
       - {click: e, long_click: "}", swipe_up: "e_sym"}
       - {click: r, long_click: "[", swipe_up: "r_sym"}
@@ -364,13 +452,13 @@ preset_keyboards:
       - {click: u, long_click: "=", swipe_up: "u_sym"}
       - {click: i, long_click: "|", swipe_up: "i_sym"}
       - {click: o, long_click: "^", swipe_up: "o_sym"}
-      - {click: p, hint: "End", long_click: "\\", swipe_up: "p_sym", swipe_down: End}
+      - {click: p, long_click: "\\", swipe_up: "p_sym", swipe_down: End}
 
       - {width: 5}
-      - {click: a, hint: "全选", long_click: "@", swipe_up: "a_sym", swipe_down: select_all}
+      - {click: a, long_click: "@", swipe_up: "a_sym", swipe_down: select_all}
       - {click: s, long_click: "#", swipe_up: "s_sym"}
-      - {click: d, hint: "日期", long_click: "$", swipe_up: "d_sym", swipe_down: "Date"}
-      - {click: f, hint: "时间", long_click: "_", swipe_up: "f_sym", swipe_down: "Time"}
+      - {click: d, long_click: "~", swipe_up: "d_sym", swipe_down: "Date"}
+      - {click: f, long_click: "_", swipe_up: "f_sym", swipe_down: "Time"}
       - {click: g, long_click: "&", swipe_up: "g_sym", swipe_down: "Keyboard_edit"}
       - {click: h, long_click: "-", swipe_up: "h_sym"}
       - {click: j, long_click: "+", swipe_up: "j_sym", swipe_down: "liquid_keyboard_clipboard"}
@@ -378,23 +466,23 @@ preset_keyboards:
       - {click: l, long_click: ")", swipe_up: "l_sym", swipe_down: "{hint_switch}{symbol_switch}"}
       - {width: 5}
 
-      - {click: Shift_L, composing: Escape2, swipe_down: Menu, width: 15, hilited_key_back_color: benter}
+      - {click: Shift_L, double_click: Shift_L2, composing: Escape, swipe_down: Menu, width: 15, hilited_key_back_color: benter}
       - {click: z, long_click: "*", swipe_up: "z_sym", swipe_down: "[]{Left}"}
-      - {click: x, hint: "剪切", long_click: "\"", swipe_up: "x_sym", swipe_down: cut}
-      - {click: c, hint: "复制", long_click: "'", swipe_up: "c_sym", swipe_down: copy}
-      - {click: v, hint: "粘贴", long_click: "~", swipe_up: "v_sym", swipe_down: paste}
+      - {click: x, long_click: "\"", swipe_up: "x_sym", swipe_down: cut}
+      - {click: c, long_click: "'", swipe_up: "c_sym", swipe_down: copy}
+      - {click: v, long_click: "$", swipe_up: "v_sym", swipe_down: paste}
       - {click: b, long_click: ":", swipe_up: "b_sym"}
-      - {click: n, hint: "换行", long_click: "!", swipe_up: "n_sym", swipe_down: "\n"}
-      - {click: m, hint: "mode", long_click: "?", swipe_up: "m_sym", swipe_down: "Mode_switch"}
+      - {click: n, long_click: "!", swipe_up: "n_sym", swipe_down: "\n"}
+      - {click: m, long_click: "?", swipe_up: "m_sym", swipe_down: "Mode_switch"}
       - {click: BackSpace2, swipe_up: all_clear, swipe_down: del_line, swipe_left: Delete, width: 15}
 
-      - {click: liquid_keyboard_ascii, composing: SSX, width: 15}
-      - {click: Keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: Theme_settings, composing: SX}
-      - {click: ",", label: " ，", long_click: "<>{Left}", composing: SX}
+      - {width: 15, click: Keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: Theme_settings, composing: SX}
+      - {click: Comma, label: " ，", composing: SX}
+      - {click: Mode_switch, label_symbol: " ", long_click: liquid_keyboard_switch, composing: SX}
       - {click: spcae, swipe_left: "Left", swipe_right: "Right", swipe_up: "Up", swipe_down: "Down", width: 30}
-      - {click: ".", label: " 。", composing: CX}
-      - {click: Mode_switch, long_click: liquid_keyboard_switch, composing: CX}
-      - {click: Return, long_click: "Color_switch", composing: WX, swipe_up: Mode_switch, width: 15, key_back_color: benter, key_text_color: tenter,}
+      - {click: Slash, composing: CX}
+      - {click: Period, label: " 。", composing: CX}
+      - {click: Return, label_symbol: " ", long_click: "Color_switch", composing: WX, swipe_up: Mode_switch, width: 15, key_back_color: benter, key_text_color: tenter,}
 
   number:
     author: "暖暖"
@@ -459,12 +547,17 @@ preset_keyboards:
 preset_keys:
   # 基础功能键
   Shift_L: {label: Shift, preview: '⇪', functional: true, send: Shift_L}
-  Return: {label: enter_labels, preview: '↩', functional: true, send: Return}
-  Return2: {label: 回车, send: Return }
-  BackSpace: {label: 退格, preview: '⇦', repeatable: true, functional: true, send: BackSpace}
-  BackSpace2: {label: Rol, preview: "⇦", repeatable: true, functional: true, send: BackSpace}
-  spcae: {repeatable: false, preview: ' ', functional: false, label: '_______', send: space}
+  Shift_L2: {label: Shift, preview: '⇪', functional: true, send: Shift_L, shift_lock: click}
+  Return: {label: "Enter", preview: '↵', functional: true, send: Return}
+  Return2: {label: 回车, send: Return}
+  BackSpace: {label: 退格, preview: '⌫', repeatable: true, functional: true, send: BackSpace}
+  BackSpace2: {label: Rol, preview: "⌫", repeatable: true, functional: true, send: BackSpace}
+  spcae: {slide_cursor: true, repeatable: false, preview: ' ', functional: false, label: '_______', send: space}
   spcae2: {repeatable: false, label: '空格', functional: true, send: space}
+  Escape: {label: Esc, functional: false, send: Escape}
+  Comma: {label: ",", functional: true, send: ","}
+  Period: {label: ".", functional: true, slide_delete: true, send: "."}
+  Slash: {label: "/", functional: false, send: "/"}
 
   # 方向键
   Left: {label: '←', send: Left, repeatable: true, functional: false}
@@ -490,8 +583,8 @@ preset_keys:
 
   # 键盘切换
   Keyboard_default: {label: 返回, functional: true, send: Eisu_toggle, select: .default}
-  Keyboard_number: {label: 123, functional: true, send: Eisu_toggle, select: number}
-  Keyboard_edit: {label: 123, functional: false, send: Eisu_toggle, select: edit}
+  Keyboard_number: {label: "?123", functional: true, send: Eisu_toggle, select: number}
+  Keyboard_edit: {label: edit, functional: false, send: Eisu_toggle, select: edit}
 
   # Liquid Keyboard
   liquid_keyboard_exit: {label: 返回, send: function, command: liquid_keyboard, option: "-1"}
@@ -500,17 +593,19 @@ preset_keys:
   liquid_keyboard_emoji: {label: "🙂", send: function, command: liquid_keyboard, option: "emoji"}
   liquid_keyboard_clipboard: {label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴"}
   liquid_keyboard_ascii: {label: 符号, send: function, command: liquid_keyboard, option: "英文", functional: true}
+  menu_keyboard: {label: 菜单, send: function, command: menu_keyboard}
 
   # 输入模式切换
-  Mode_switch: {toggle: ascii_mode, functional: true, send: Mode_switch, states: [中, EN]}
+  Mode_switch: {toggle: ascii_mode, functional: false, send: Mode_switch, states: [中, EN]}
   # 日期时间
-  Date: {label: 日期, send: function, command: date, option: " yyyy-MM-dd "}
+  Date: {label: 日期, send: function, command: date, option: "yyyy-MM-dd"}
   Time: {label: 時間, send: function, command: date, option: "HH:mm:ss"}
   # 特殊功能
   Menu: {label: 菜单, functional: false, send: Menu}
   Settings: {label: 设置, functional: false, send: SETTINGS}
   Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
   Color_switch: {label: 配色, functional: false, send: PROG_RED}
+  Hide: {label: 隐藏, send: BACK}
 
   # 符号按键
   q_sym: {label: "`", commit: "`"}
