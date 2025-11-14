@@ -17,8 +17,8 @@ style:
   candidate_font: han.ttf
   comment_font: comment.ttf
   hanb_font: hanb.ttf
-  # FIX: LiquidItemUi.kt 应用字体后，无法自动缩放
-  key_font: iconfont.ttf
+  # NOTE: 因为 iconfont.ttf 的度量信息并不完整，因此需要一个度量信息完整的空字体，确保 LiquidItemUi 应用字体后，AutoScaleTextView 能够正确计算 top 与 bootom
+  key_font: ["EmptyFont.ttf", "iconfont.ttf"]
   label_font: label.ttf
   latin_font: latin.ttf
   popup_font: iconfont.ttf
