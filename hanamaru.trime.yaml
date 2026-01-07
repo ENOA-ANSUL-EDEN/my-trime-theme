@@ -1,9 +1,9 @@
 # Hanamaru Trime Theme Configuration
 # encoding: utf-8
 
-config_version: "1.0"
+config_version: "2026-01-08"
 name: "Hanamaru"
-author: "https://github.com/MULE-FEHU-EOLIA-ARTONELICO"
+author: "https://github.com/ENOA-ANSUL-EDEN"
 
 style:
   # 功能
@@ -17,11 +17,10 @@ style:
   candidate_font: han.ttf
   comment_font: comment.ttf
   hanb_font: hanb.ttf
-  # NOTE: 因为 iconfont.ttf 的度量信息并不完整，因此需要一个度量信息完整的空字体，确保 LiquidItemUi 应用字体后，AutoScaleTextView 能够正确计算 top 与 bootom
-  key_font: ["EmptyFont.ttf", "iconfont.ttf"]
+  key_font: key.ttf
   label_font: label.ttf
   latin_font: latin.ttf
-  popup_font: iconfont.ttf
+  popup_font: popup.ttf
   symbol_font: symbol.ttf
   text_font: latin.ttf
   # 尺寸
@@ -441,12 +440,13 @@ tool_bar:
   buttons: [*emoji_button, *edit_button, *clipboard_button, *redo_button, *undo_button, *right_button, *left_button]
 
 preset_keyboards:
+
   default:
     author: " "
-    name: 26键默认布局
+    name: 26键
     width: 10
     ascii_mode: 0
-    lock: true
+    reset_ascii_mode: false
     label_transform: uppercase
     key_symbol_offset_x: 14
     keys:
@@ -484,8 +484,8 @@ preset_keyboards:
       - {click: back_space_2, swipe_up: all_clear, swipe_down: del_line, swipe_left: Delete, width: 15}
 
       - {width: 15, click: keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: theme_settings, composing: menu_sx}
-      - {click: comma, label: " ，", composing: menu_sx}
-      - {click: ascii_mode_switch, label_symbol: " ", long_click: liquid_keyboard_switch, composing: menu_sx}
+      - {click: comma, label: " ，", composing: menu_sx, swipe_up: "HDSS"}
+      - {click: ascii_mode_switch, label_symbol: " ", long_click: liquid_keyboard_switch, composing: menu_sx, key_text_size: 20}
       - {click: spcae, swipe_left: "left", swipe_right: "right", swipe_up: "up", swipe_down: "down", width: 30}
       - {click: slash, composing: menu_cx}
       - {click: period, label: " 。", composing: menu_cx}
@@ -522,7 +522,7 @@ preset_keyboards:
       - {click: return, key_back_color: benter, key_text_color: tenter,}
 
   edit:
-    name: "编辑键盘"
+    name: 编辑
     width: 20.25
     height: 70
     ascii_mode: 1
@@ -549,7 +549,7 @@ preset_keyboards:
       - {click: undo}
       - {click: Tab1}
       - {click: redo}
-      - {click: return, width: 19,}
+      - {click: return, width: 19}
 
 preset_keys:
   # 基础功能键
@@ -606,7 +606,7 @@ preset_keys:
   menu_keyboard: {label: 菜单, send: function, command: menu_keyboard}
 
   # 输入模式切换
-  ascii_mode_switch: {toggle: ascii_mode, functional: false, send: Mode_switch, states: ["", ""]}
+  ascii_mode_switch: {toggle: ascii_mode, functional: false, send: Mode_switch, states: ["ic@web", "ic@web"]}
   # 日期时间
   date: {label: 日期, send: function, command: date, option: "yyyy-MM-dd"}
   time: {label: 時間, send: function, command: date, option: "HH:mm:ss"}
@@ -616,6 +616,8 @@ preset_keys:
   theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
   color_switch: {label: 配色, functional: false, send: PROG_RED}
   hide: {label: 隐藏, send: BACK}
+
+  HDSS: {label: 汉典, functional: false, send: function, command: web_search, option: "https://www.zdic.net/hans/%3$s"}
 
   # 符号按键
   q_sym: {label: "`", commit: "`"}
@@ -654,7 +656,7 @@ preset_keys:
   symbol_switch: {toggle: _hide_key_symbol, send: Mode_switch, states: [☰, ☱]}
 
   # 候选选择
-  menu_cx: {label: "U", send: 2}
-  menu_sx: {label: "Su", send: 3}
-  menu_ssx: {label: "Yun", send: 4}
-  menu_wx: {label: "Fi", send: 5}
+  menu_cx: {label: "U", send: function, command: select_candidate, option: "1"}
+  menu_sx: {label: "Su", send: function, command: select_candidate, option: "2"}
+  menu_sxx: {label: "Yun", send: function, command: select_candidate, option: "3"}
+  menu_wx: {label: "Fi", send: function, command: select_candidate, option: "4"}
