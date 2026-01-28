@@ -1,0 +1,12 @@
+patch:
+  preset_keyboards/+:
+     liuli:
+       import_preset: liuli_
+
+     liuli_:
+       __include: hanamaru.trime:preset_keyboards/default
+       __patch:
+         keys/@30/composing: Tab
+         # keys/@32/composing: ""
+         # keys/@34/composing: ""
+         keys/@36/composing: ""

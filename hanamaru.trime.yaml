@@ -9,7 +9,7 @@ style:
   # 功能
   auto_caps: false
   proximity_correction: true
-  reset_ascii_mode: true
+  reset_ascii_mode: false
   candidate_use_cursor: true
   comment_on_top: false
   horizontal: false
@@ -82,9 +82,23 @@ window:
     vertical: 0
     horizontal: 4
   foreground:
-    label_font_size: 20
-    text_font_size: 20
-    comment_font_size: 16
+    label_font_size: 16
+    text_font_size: 16
+    comment_font_size: 14
+  # NOTE: 非主分支参数
+  candidate_format:
+    label:
+      format: "[%s]"
+      after: " "
+      visible: true
+    candidate:
+      format: "%s"
+      after: " · "
+      visible: true
+    comment:
+      format: "%s"
+      after: ""
+      visible: true
 
 fallback_colors:
   candidate_text_color: text_color
@@ -251,7 +265,7 @@ liquid_keyboard:
     position: right
     keys:
       - liquid_keyboard_exit
-      - liquid_spcae
+      - liquid_space
       - liquid_back_space
       - liquid_return
       - liquid_keyboard_clipboard
@@ -486,7 +500,7 @@ preset_keyboards:
       - {width: 15, click: keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: theme_settings, composing: menu_sx}
       - {click: comma, label: " ，", composing: menu_sx, swipe_up: "HDSS"}
       - {click: ascii_mode_switch, label_symbol: " ", long_click: liquid_keyboard_switch, composing: menu_sx, key_text_size: 20}
-      - {click: spcae, swipe_left: "left", swipe_right: "right", swipe_up: "up", swipe_down: "down", width: 30}
+      - {click: space, swipe_left: left, swipe_right: right, swipe_up: up, swipe_down: down, width: 30}
       - {click: slash, composing: menu_cx}
       - {click: period, label: " 。", composing: menu_cx}
       - {click: return, label_symbol: " ", popup: ["color_switch", "theme_settings"], composing: menu_wx, swipe_up: Mode_switch, width: 15, key_back_color: benter, key_text_color: tenter,}
@@ -501,7 +515,7 @@ preset_keyboards:
       - {click: 1}
       - {click: 2}
       - {click: 3}
-      - {click: spcae_2, key_back_color: bgn, key_text_color: tgn}
+      - {click: space_2, key_back_color: bgn, key_text_color: tgn}
 
       - {click: "-", long_click: "%", key_back_color: bgn, key_text_color: tgn}
       - {click: 4}
@@ -547,7 +561,7 @@ preset_keyboards:
 
       - {click: paste}
       - {click: undo}
-      - {click: Tab1}
+      - {click: Tab}
       - {click: redo}
       - {click: return, width: 19}
 
@@ -558,8 +572,8 @@ preset_keys:
   return: {label: "Enter", preview: '↵', functional: true, send: Return}
   back_space: {label: ⌫, repeatable: true, functional: true, send: BackSpace}
   back_space_2: {label: Rol, preview: "⌫", repeatable: true, functional: true, send: BackSpace}
-  spcae: {slide_cursor: true, repeatable: false, preview: ' ', functional: false, label: '_______', send: space}
-  spcae_2: {repeatable: false, label: '⎵', functional: true, send: space}
+  space: {slide_cursor: true, repeatable: false, preview: ' ', functional: false, label: '_______', send: space}
+  space_2: {repeatable: false, label: '⎵', functional: true, send: space}
   escape: {label: Esc, functional: false, send: Escape}
   comma: {label: ",", functional: true, send: ","}
   period: {label: ".", functional: true, slide_delete: true, send: "."}
@@ -599,7 +613,7 @@ preset_keys:
   liquid_keyboard_emoji: {label: "🙂", send: function, command: liquid_keyboard, option: "emoji"}
   liquid_keyboard_clipboard: {label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴"}
   liquid_keyboard_ascii: {label: 符号, send: function, command: liquid_keyboard, option: "英文", functional: true}
-  liquid_spcae: {label: "回车", send: Return}
+  liquid_space: {label: 回车, send: Return}
   liquid_back_space: {label: "退格", repeatable: true, functional: true, send: BackSpace}
   liquid_return: {repeatable: false, label: '空格', functional: true, send: space}
 
@@ -632,7 +646,7 @@ preset_keys:
   p_sym: {label: "\\", commit: "\\"}
   a_sym: {label: "@", commit: "@"}
   s_sym: {label: "#", commit: "#"}
-  d_sym: {label: "$", commit: "$"}
+  d_sym: {label: "~", commit: "~"}
   f_sym: {label: "_", commit: "_"}
   g_sym: {label: "&", commit: "&"}
   h_sym: {label: "-", commit: "-"}
@@ -642,7 +656,7 @@ preset_keys:
   z_sym: {label: "*", commit: "*"}
   x_sym: {label: "\"", commit: "\""}
   c_sym: {label: "'", commit: "'"}
-  v_sym: {label: "~", commit: "~"}
+  v_sym: {label: "$", commit: "$"}
   b_sym: {label: ":", commit: ":"}
   n_sym: {label: "!", commit: "!"}
   m_sym: {label: "?", commit: "?"}
