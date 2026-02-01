@@ -102,10 +102,10 @@ window:
 
 fallback_colors:
   candidate_text_color: text_color
-  bgn: off_key_back_color
-  tgn: off_key_text_color
-  benter: off_key_back_color
-  tenter: off_key_text_color
+  background_normal: off_key_back_color
+  text_normal: off_key_text_color
+  background_enter: off_key_back_color
+  text_enter: off_key_text_color
 
 preset_color_schemes:
   tongwenfeng:
@@ -143,10 +143,10 @@ preset_color_schemes:
     preview_back_color: 0xFFACB2C2
     candidate_separator_color: 0xFFFFFFFF
 
-    bgn: 0xFFACB2C2
-    bkg: 0xFFFFFFFF
-    benter: 0xFF3266A0
-    tenter: 0xFFFFFFFF
+    background_normal: 0xFFACB2C2
+    background_key: 0xFFFFFFFF
+    background_enter: 0xFF3266A0
+    text_enter: 0xFFFFFFFF
 
   steam:
     name: "Steam"
@@ -216,8 +216,8 @@ preset_color_schemes:
     hilited_on_key_back_color: 0xFFB0C6FF
     on_key_text_color: 0xFF000000
     hilited_on_key_text_color: 0xFF000000
-    benter: 0xFFB0C6FF
-    tenter: 0xFF000000
+    background_enter: 0xFFB0C6FF
+    text_enter: 0xFF000000
 
   fcitx5_mone_dark:
     name: "Fcitx5 Monet Dark"
@@ -246,8 +246,8 @@ preset_color_schemes:
     hilited_on_key_back_color: 0xFFB3C5FF
     on_key_text_color: 0xFF002B75
     hilited_on_key_text_color: 0xFF002B75
-    benter: 0xFFB3C5FF
-    tenter: 0xFF002B75
+    background_enter: 0xFFB3C5FF
+    text_enter: 0xFF002B75
     candidate_separator_color: 0xFF363943
     popup_back_color: 0xFF1C1F29
     hilited_popup_text_color: 0xFF1C1F29
@@ -398,7 +398,6 @@ liquid_keyboard:
     name: 符号表
     keys: [{符号: '/fh'}, {电脑: '/dn'}, {象棋: '/xq'}, {麻将: '/mj'}, {骰子: '/sz'}, {扑克: '/pk'}, {天气: '/tq'}, {音乐: '/yy'}, {八卦: '/bg'}, {易经: '/lssg'}, {天体: '/tt'}, {星座: '/xz'}, {星号: '/xh'}, {方块: '/fk'}, {几何: '/jh'}, {箭头: '/jt'}, {数学: '/sx'}, {上标: '/sb'}, {下标: '/xb'}, {单位: '/dw'}, {货币: '/hb'}, {拼音: '/py'}, {注音: '/zy'}, {假名: '/jm'}, {片假: '/pjm'}, {韩文: '/hw'}, {希腊: '/xl'}, {希大: '/xld'}, {罗马: '/lm'}, {罗大: '/lmd'}, {俄语: '/ey'}, {俄大: '/eyd'}, {表情: '/bq'}, {一: '/1'}, {二: '/2'}, {三: '/3'}, {四: '/4'}, {五: '/5'}, {六: '/6'}, {七: '/7'}, {八: '/8'}, {九: '/9'}, {零: '/0'}, {十: '/10'}, {分数: '/fs'}, {标点: '/bd'}, {偏旁: '/pp'}, {竖标: '/bdz'}]
 
-
 tool_bar:
   button_spacing: 13
   button_font: iconfont.ttf
@@ -487,7 +486,7 @@ preset_keyboards:
       - {click: l, long_click: ")", swipe_up: "l_sym", swipe_down: "{hint_switch}{symbol_switch}"}
       - {width: 5}
 
-      - {click: shift_L, label_symbol: " ", long_click: shift_L, double_click: shift_L2, composing: escape, swipe_down: menu, width: 15, hilited_key_back_color: benter}
+      - {click: shift_L, label_symbol: " ", long_click: shift_L, double_click: shift_L2, composing: escape, swipe_down: menu, width: 15, hilited_key_back_color: background_enter}
       - {click: z, long_click: "*", swipe_up: "z_sym"}
       - {click: x, long_click: "\"", swipe_up: "x_sym", swipe_down: cut}
       - {click: c, long_click: "'", swipe_up: "c_sym", swipe_down: copy}
@@ -497,13 +496,13 @@ preset_keyboards:
       - {click: m, long_click: "?", swipe_up: "m_sym", swipe_down: "ascii_mode_switch"}
       - {click: back_space_2, swipe_up: all_clear, swipe_down: del_line, swipe_left: Delete, width: 15}
 
-      - {width: 15, click: keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: theme_settings, composing: menu_sx}
-      - {click: comma, label: " ，", composing: menu_sx, swipe_up: "HDSS"}
-      - {click: ascii_mode_switch, label_symbol: " ", long_click: liquid_keyboard_switch, composing: menu_sx, key_text_size: 20}
+      - {width: 15, click: keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: theme_settings, composing: candidate_second}
+      - {click: comma, label: " ，", composing: candidate_second, swipe_up: "zdic_search"}
+      - {click: ascii_mode_switch, label_symbol: " ", long_click: liquid_keyboard_switch, composing: candidate_second, key_text_size: 20}
       - {click: space, swipe_left: left, swipe_right: right, swipe_up: up, swipe_down: down, width: 30}
-      - {click: slash, composing: menu_cx}
-      - {click: period, label: " 。", composing: menu_cx}
-      - {click: return, label_symbol: " ", popup: ["color_switch", "theme_settings"], composing: menu_wx, swipe_up: Mode_switch, width: 15, key_back_color: benter, key_text_color: tenter,}
+      - {click: slash, composing: candidate_first}
+      - {click: period, label: " 。", composing: candidate_first}
+      - {click: return, label_symbol: " ", popup: ["color_switch", "theme_settings"], composing: candidate_fourth, swipe_up: Mode_switch, width: 15, key_back_color: background_enter, key_text_color: text_enter,}
 
   number:
     author: " "
@@ -511,29 +510,29 @@ preset_keyboards:
     width: 20
     ascii_mode: 1
     keys:
-      - {click: "+", long_click: "#", key_back_color: bgn, key_text_color: tgn}
+      - {click: "+", long_click: "#", key_back_color: background_normal, key_text_color: text_normal}
       - {click: 1}
       - {click: 2}
       - {click: 3}
-      - {click: space_2, key_back_color: bgn, key_text_color: tgn}
+      - {click: space_2, key_back_color: background_normal, key_text_color: text_normal}
 
-      - {click: "-", long_click: "%", key_back_color: bgn, key_text_color: tgn}
+      - {click: "-", long_click: "%", key_back_color: background_normal, key_text_color: text_normal}
       - {click: 4}
       - {click: 5}
       - {click: 6}
-      - {click: "=", key_back_color: bgn, key_text_color: tgn}
+      - {click: "=", key_back_color: background_normal, key_text_color: text_normal}
 
-      - {click: "*", long_click: "u", key_back_color: bgn, key_text_color: tgn}
+      - {click: "*", long_click: "u", key_back_color: background_normal, key_text_color: text_normal}
       - {click: 7}
       - {click: 8}
       - {click: 9}
       - {click: back_space}
 
-      - {click: "/", long_click: '\', key_back_color: bgn, key_text_color: tgn}
+      - {click: "/", long_click: '\', key_back_color: background_normal, key_text_color: text_normal}
       - {click: keyboard_default}
       - {click: 0}
-      - {click: ".", key_back_color: bgn, key_text_color: tgn}
-      - {click: return, key_back_color: benter, key_text_color: tenter,}
+      - {click: ".", key_back_color: background_normal, key_text_color: text_normal}
+      - {click: return, key_back_color: background_enter, key_text_color: text_enter,}
 
   edit:
     name: 编辑
@@ -551,7 +550,7 @@ preset_keyboards:
       - {click: left}
       - {click: shift_L}
       - {click: right}
-      - {click: spcae_2, width: 19}
+      - {click: space_2, width: 19}
 
       - {click: copy}
       - {click: home}
@@ -630,8 +629,7 @@ preset_keys:
   theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
   color_switch: {label: 配色, functional: false, send: PROG_RED}
   hide: {label: 隐藏, send: BACK}
-
-  HDSS: {label: 汉典, functional: false, send: function, command: web_search, option: "https://www.zdic.net/hans/%3$s"}
+  zdic_search: {label: 汉典, functional: false, send: function, command: web_search, option: "https://www.zdic.net/hans/%3$s"}
 
   # 符号按键
   q_sym: {label: "`", commit: "`"}
@@ -669,8 +667,8 @@ preset_keys:
   hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [≑, ≟]}
   symbol_switch: {toggle: _hide_key_symbol, send: Mode_switch, states: [☰, ☱]}
 
-  # 候选选择
-  menu_cx: {label: "U", send: function, command: select_candidate, option: "1"}
-  menu_sx: {label: "Su", send: function, command: select_candidate, option: "2"}
-  menu_sxx: {label: "Yun", send: function, command: select_candidate, option: "3"}
-  menu_wx: {label: "Fi", send: function, command: select_candidate, option: "4"}
+  # 候选词选择
+  candidate_first: {label: "U", send: function, command: select_candidate, option: "1"}
+  candidate_second: {label: "Su", send: function, command: select_candidate, option: "2"}
+  candidate_third: {label: "Yun", send: function, command: select_candidate, option: "3"}
+  candidate_fourth: {label: "Fi", send: function, command: select_candidate, option: "4"}
