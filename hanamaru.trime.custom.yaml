@@ -1,12 +1,26 @@
 patch:
   preset_keyboards/+:
-     liuli:
-       import_preset: liuli_
+    liuli:
+      import_preset: liuli_default
 
-     liuli_:
-       __include: hanamaru.trime:preset_keyboards/default
-       __patch:
-         keys/@30/composing: Tab
-         # keys/@32/composing: ""
-         # keys/@34/composing: ""
-         keys/@36/composing: ""
+    liuli_default:
+      __include: hanamaru.trime:preset_keyboards/default
+      __patch:
+        keys/@30/composing: Tab
+        keys/@36/composing: ""
+
+    snow_qingyun: 
+      import_preset: snow_default
+
+    snow_qingchun:
+      import_preset: snow_default
+
+    snow_default:
+      __include: hanamaru.trime:preset_keyboards/default
+      __patch:
+        keys/@30/composing: ";"
+        keys/@31/composing: ""
+        keys/@32/composing: ""
+        keys/@34/composing: ""
+        keys/@35/composing: ""
+        keys/@36/composing: ""

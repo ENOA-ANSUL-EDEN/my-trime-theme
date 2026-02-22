@@ -15,7 +15,9 @@ style:
   horizontal: false
   # 字体
   candidate_font: han.ttf
-  comment_font: comment.ttf
+  comment_font:
+    - MonaspaceNeonFrozen-Regular.ttf
+    - ChaiPUA-0.2.7-snow.ttf
   hanb_font: hanb.ttf
   key_font: key.ttf
   label_font: label.ttf
