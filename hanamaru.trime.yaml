@@ -465,37 +465,37 @@ preset_keyboards:
     label_transform: uppercase
     key_symbol_offset_x: 14
     keys:
-      - {click: q, long_click: "`", swipe_up: "q_sym", swipe_down: home}
-      - {click: w, long_click: "{", swipe_up: "w_sym"}
-      - {click: e, long_click: "}", swipe_up: "e_sym"}
-      - {click: r, long_click: "[", swipe_up: "r_sym"}
-      - {click: t, long_click: "]", swipe_up: "t_sym"}
-      - {click: y, long_click: "%", swipe_up: "y_sym"}
-      - {click: u, long_click: "=", swipe_up: "u_sym"}
-      - {click: i, long_click: "|", swipe_up: "i_sym"}
-      - {click: o, long_click: "^", swipe_up: "o_sym"}
-      - {click: p, long_click: "\\", swipe_up: "p_sym", swipe_down: end}
+      - {click: q, long_click: "`", swipe_up: "`", swipe_down: home}
+      - {click: w, long_click: "{", swipe_up: "{"}
+      - {click: e, long_click: "}", swipe_up: "}"}
+      - {click: r, long_click: "[", swipe_up: "["}
+      - {click: t, long_click: "]", swipe_up: "]"}
+      - {click: y, long_click: "%", swipe_up: "%"}
+      - {click: u, long_click: "=", swipe_up: "="}
+      - {click: i, long_click: "|", swipe_up: "|"}
+      - {click: o, long_click: "^", swipe_up: "^"}
+      - {click: p, long_click: "\\", swipe_up: "\\", swipe_down: end}
 
       - {width: 5}
-      - {click: a, long_click: "@", swipe_up: "a_sym", swipe_down: select_all}
-      - {click: s, long_click: "#", swipe_up: "s_sym"}
-      - {click: d, long_click: "~", swipe_up: "d_sym", swipe_down: "date"}
-      - {click: f, long_click: "_", swipe_up: "f_sym", swipe_down: "time"}
-      - {click: g, long_click: "&", swipe_up: "g_sym", swipe_down: "keyboard_edit"}
-      - {click: h, long_click: "-", swipe_up: "h_sym"}
-      - {click: j, long_click: "+", swipe_up: "j_sym", swipe_down: "liquid_keyboard_clipboard"}
-      - {click: k, long_click: "(", swipe_up: "k_sym", swipe_down: "liquid_keyboard_emoji"}
-      - {click: l, long_click: ")", swipe_up: "l_sym", swipe_down: "{hint_switch}{symbol_switch}"}
+      - {click: a, long_click: "@", swipe_up: "@", swipe_down: select_all}
+      - {click: s, long_click: "#", swipe_up: "#"}
+      - {click: d, long_click: "~", swipe_up: "~", swipe_down: "date"}
+      - {click: f, long_click: "_", swipe_up: "_", swipe_down: "time"}
+      - {click: g, long_click: "&", swipe_up: "&", swipe_down: "keyboard_edit"}
+      - {click: h, long_click: "-", swipe_up: "-"}
+      - {click: j, long_click: "+", swipe_up: "+", swipe_down: "liquid_keyboard_clipboard"}
+      - {click: k, long_click: "(", swipe_up: "(", swipe_down: "liquid_keyboard_emoji"}
+      - {click: l, long_click: ")", swipe_up: ")", swipe_down: "{hint_switch}{symbol_switch}"}
       - {width: 5}
 
       - {click: shift_L, label_symbol: " ", long_click: shift_L, double_click: shift_L2, composing: escape, swipe_down: menu, width: 15, hilited_key_back_color: background_enter}
-      - {click: z, long_click: "*", swipe_up: "z_sym"}
-      - {click: x, long_click: "\"", swipe_up: "x_sym", swipe_down: cut}
-      - {click: c, long_click: "'", swipe_up: "c_sym", swipe_down: copy}
-      - {click: v, long_click: "$", swipe_up: "v_sym", swipe_down: paste}
-      - {click: b, long_click: ":", swipe_up: "b_sym"}
-      - {click: n, long_click: "!", swipe_up: "n_sym", swipe_down: "\n"}
-      - {click: m, long_click: "?", swipe_up: "m_sym", swipe_down: "ascii_mode_switch"}
+      - {click: z, long_click: "*", swipe_up: "*"}
+      - {click: x, long_click: "\"", swipe_up: "\"", swipe_down: cut}
+      - {click: c, long_click: "'", swipe_up: "'", swipe_down: copy}
+      - {click: v, long_click: "$", swipe_up: "$", swipe_down: paste}
+      - {click: b, long_click: ":", swipe_up: ":"}
+      - {click: n, long_click: "!", swipe_up: "!", swipe_down: "\n"}
+      - {click: m, long_click: "?", swipe_up: "?", swipe_down: "ascii_mode_switch"}
       - {click: back_space_2, swipe_up: all_clear, swipe_down: del_line, swipe_left: Delete, width: 15}
 
       - {width: 15, click: keyboard_number, swipe_up: "liquid_keyboard_ascii", swipe_down: theme_settings, composing: candidate_second}
@@ -632,34 +632,6 @@ preset_keys:
   color_switch: {label: 配色, functional: false, send: PROG_RED}
   hide: {label: 隐藏, send: BACK}
   zdic_search: {label: 汉典, functional: false, send: function, command: web_search, option: "https://www.zdic.net/hans/%3$s"}
-
-  # 符号按键
-  q_sym: {label: "`", commit: "`"}
-  w_sym: {label: "{", commit: "{"}
-  e_sym: {label: "}", commit: "}"}
-  r_sym: {label: "[", commit: "["}
-  t_sym: {label: "]", commit: "]"}
-  y_sym: {label: "%", commit: "%"}
-  u_sym: {label: "=", commit: "="}
-  i_sym: {label: "|", commit: "|"}
-  o_sym: {label: "^", commit: "^"}
-  p_sym: {label: "\\", commit: "\\"}
-  a_sym: {label: "@", commit: "@"}
-  s_sym: {label: "#", commit: "#"}
-  d_sym: {label: "~", commit: "~"}
-  f_sym: {label: "_", commit: "_"}
-  g_sym: {label: "&", commit: "&"}
-  h_sym: {label: "-", commit: "-"}
-  j_sym: {label: "+", commit: "+"}
-  k_sym: {label: "(", commit: "("}
-  l_sym: {label: ")", commit: ")"}
-  z_sym: {label: "*", commit: "*"}
-  x_sym: {label: "\"", commit: "\""}
-  c_sym: {label: "'", commit: "'"}
-  v_sym: {label: "$", commit: "$"}
-  b_sym: {label: ":", commit: ":"}
-  n_sym: {label: "!", commit: "!"}
-  m_sym: {label: "?", commit: "?"}
 
   # 高级编辑
   del_line: {label: "Del↔", functional: false, text: "{End}{Shift+Home}{Delete}"}
